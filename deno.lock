@@ -5,14 +5,21 @@
     "jsr:@oak/oak@^17.1.4": "17.1.6",
     "jsr:@std/assert@1": "1.0.14",
     "jsr:@std/assert@^1.0.12": "1.0.14",
+    "jsr:@std/assert@^1.0.13": "1.0.14",
+    "jsr:@std/assert@^1.0.14": "1.0.14",
     "jsr:@std/bytes@1": "1.0.6",
     "jsr:@std/crypto@1": "1.0.5",
+    "jsr:@std/data-structures@^1.0.9": "1.0.9",
     "jsr:@std/encoding@1": "1.0.10",
     "jsr:@std/encoding@^1.0.10": "1.0.10",
+    "jsr:@std/expect@^1.0.17": "1.0.17",
+    "jsr:@std/fs@^1.0.19": "1.0.19",
     "jsr:@std/http@1": "1.0.20",
     "jsr:@std/internal@^1.0.10": "1.0.10",
     "jsr:@std/media-types@1": "1.1.0",
     "jsr:@std/path@1": "1.1.2",
+    "jsr:@std/path@^1.1.1": "1.1.2",
+    "jsr:@std/testing@^1.0.15": "1.0.15",
     "npm:@deno/vite-plugin@^1.0.4": "1.0.5_vite@6.3.6__picomatch@4.0.3_@types+node@24.2.0",
     "npm:@types/node@*": "24.2.0",
     "npm:@types/react@^19.1.2": "19.1.13",
@@ -21,6 +28,7 @@
     "npm:react-dom@^19.1.0": "19.1.1_react@19.1.1",
     "npm:react-router-dom@^7.5.1": "7.9.1_react@19.1.1_react-dom@19.1.1__react@19.1.1",
     "npm:react@^19.1.0": "19.1.1",
+    "npm:vite@*": "6.3.6_picomatch@4.0.3_@types+node@24.2.0",
     "npm:vite@^6.3.2": "6.3.6_picomatch@4.0.3_@types+node@24.2.0"
   },
   "jsr": {
@@ -43,7 +51,7 @@
         "jsr:@std/bytes",
         "jsr:@std/http",
         "jsr:@std/media-types",
-        "jsr:@std/path",
+        "jsr:@std/path@1",
         "npm:path-to-regexp"
       ]
     },
@@ -59,8 +67,24 @@
     "@std/crypto@1.0.5": {
       "integrity": "0dcfbb319fe0bba1bd3af904ceb4f948cde1b92979ec1614528380ed308a3b40"
     },
+    "@std/data-structures@1.0.9": {
+      "integrity": "033d6e17e64bf1f84a614e647c1b015fa2576ae3312305821e1a4cb20674bb4d"
+    },
     "@std/encoding@1.0.10": {
       "integrity": "8783c6384a2d13abd5e9e87a7ae0520a30e9f56aeeaa3bdf910a3eaaf5c811a1"
+    },
+    "@std/expect@1.0.17": {
+      "integrity": "316b47dd65c33e3151344eb3267bf42efba17d1415425f07ed96185d67fc04d9",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.14",
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/fs@1.0.19": {
+      "integrity": "051968c2b1eae4d2ea9f79a08a3845740ef6af10356aff43d3e2ef11ed09fb06",
+      "dependencies": [
+        "jsr:@std/path@^1.1.1"
+      ]
     },
     "@std/http@1.0.20": {
       "integrity": "b5cc33fc001bccce65ed4c51815668c9891c69ccd908295997e983d8f56070a1",
@@ -81,6 +105,16 @@
       "integrity": "c0b13b97dfe06546d5e16bf3966b1cadf92e1cc83e56ba5476ad8b498d9e3038",
       "dependencies": [
         "jsr:@std/internal"
+      ]
+    },
+    "@std/testing@1.0.15": {
+      "integrity": "a490169f5ccb0f3ae9c94fbc69d2cd43603f2cffb41713a85f99bbb0e3087cbc",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.13",
+        "jsr:@std/data-structures",
+        "jsr:@std/fs",
+        "jsr:@std/internal",
+        "jsr:@std/path@^1.1.1"
       ]
     }
   },
@@ -838,6 +872,8 @@
     "dependencies": [
       "jsr:@oak/oak@^17.1.4",
       "jsr:@std/assert@^1.0.12",
+      "jsr:@std/expect@^1.0.17",
+      "jsr:@std/testing@^1.0.15",
       "npm:@deno/vite-plugin@^1.0.4",
       "npm:@types/react@^19.1.2",
       "npm:@vitejs/plugin-react@^4.4.1",
