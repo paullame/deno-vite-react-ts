@@ -23,3 +23,8 @@ permission = "always"
 
 [tools.grep]
 permission = "always"
+
+[[mcp_servers]]
+name = "specification-website"
+transport = "streamable-http"
+url = "https://mcp.specification.website/mcp"
